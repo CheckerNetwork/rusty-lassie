@@ -2,8 +2,6 @@ module github.com/filecoin-station/rusty-lassie
 
 go 1.22.0
 
-toolchain go1.23.6
-
 require github.com/filecoin-project/lassie v0.24.0
 
 require (
