@@ -99,6 +99,8 @@ struct GoDaemon {
 }
 
 static mut DAEMON: Mutex<Option<GoDaemon>> = Mutex::new(None);
+
+#[allow(static_mut_refs)]
 fn get_global_daemon() -> std::sync::LockResult<MutexGuard<'static, Option<GoDaemon>>> {
     // SAFETY:
     // We are accessing the global variable from this place only and it's protected by a Mutex.
@@ -117,7 +119,7 @@ pub struct DaemonConfig {
     /// By default, we ask the operating system to choose a free ephemeral port.
     pub port: u16,
 
-    /// MaxBlocks optionally specifies the maximum number of blocks to fetch.
+    /// `MaxBlocks` optionally specifies the maximum number of blocks to fetch.
     ///
     /// When the requested CID contains more blocks than specified, the HTTP response will be
     /// aborted in a way that triggers a client error.
