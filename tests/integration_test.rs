@@ -60,8 +60,9 @@ fn configure_max_blocks() {
 
     // XKCD Archives offered for exploration by IPFS Desktop
     // This archive contains many blocks an takes long to download unless the block limit is applied
-    let url =
-        format!("http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy");
+    let url = format!(
+        "http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy"
+    );
     let response = ureq::get(&url).call();
     let response = assert_ok_response(response);
 
@@ -88,8 +89,9 @@ fn configure_global_timeout() {
 
     // XKCD Archives offered for exploration by IPFS Desktop
     // This archive contains many blocks an takes long to download
-    let url =
-        format!("http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy");
+    let url = format!(
+        "http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy"
+    );
     let response = ureq::get(&url).call();
     let response = assert_ok_response(response);
 
