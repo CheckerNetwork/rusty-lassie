@@ -26,9 +26,9 @@ extern "C" {
 
 // See https://github.com/golang/go/issues/11258
 #[cfg_attr(target_os = "macos", link(name = "Security", kind = "framework"))]
+extern "C" {}
 #[cfg_attr(target_os = "macos", link(name = "CoreFoundation", kind = "framework"))]
 extern "C" {}
-
 
 #[repr(C)]
 #[derive(Debug)]
