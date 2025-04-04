@@ -72,18 +72,6 @@ fn build_lassie() {
     assert!(status.success(), "`go build` failed");
 
     println!("cargo:rustc-link-search=native={out_dir}");
-
-    #[cfg(target_os = "macos")]
-    {
-        // See https://github.com/golang/go/issues/11258
-        println!("cargo:rustc-link-arg=-framework");
-        println!("cargo:rustc-link-arg=CoreFoundation");
-        println!("cargo:rustc-link-arg=-framework");
-        println!("cargo:rustc-link-arg=Security");
-        // See https://github.com/golang/go/issues/58159
-        // println!("cargo:rustc-link-lib=resolv");
-        // ^^ Replaced with `-tags netgo`
-    }
 }
 
 #[cfg(all(target_os = "windows", target_env = "msvc"))]

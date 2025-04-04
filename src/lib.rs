@@ -24,6 +24,12 @@ extern "C" {
     fn DropResult(value: *mut LassieResult);
 }
 
+// See https://github.com/golang/go/issues/11258
+#[cfg_attr(target_os = "macos", link(name = "Security", kind = "framework"))]
+#[cfg_attr(target_os = "macos", link(name = "CoreFoundation", kind = "framework"))]
+extern "C" {}
+
+
 #[repr(C)]
 #[derive(Debug)]
 struct InitDaemonResult {
