@@ -327,7 +327,7 @@ mod test {
             Ok(_) => panic!("starting another instance should have failed"),
 
             Err(err) => assert_eq!(err, StartError::OnlyOneInstanceAllowed),
-        };
+        }
     }
 
     #[test]
@@ -349,7 +349,7 @@ mod test {
                 );
             }
             Err(err) => panic!("unexpected error while starting Lassie on port 1: {err}"),
-        };
+        }
     }
 
     #[test]
