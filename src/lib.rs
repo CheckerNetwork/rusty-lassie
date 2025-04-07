@@ -24,6 +24,12 @@ extern "C" {
     fn DropResult(value: *mut LassieResult);
 }
 
+// See https://github.com/golang/go/issues/11258
+#[cfg_attr(target_os = "macos", link(name = "Security", kind = "framework"))]
+extern "C" {}
+#[cfg_attr(target_os = "macos", link(name = "CoreFoundation", kind = "framework"))]
+extern "C" {}
+
 #[repr(C)]
 #[derive(Debug)]
 struct InitDaemonResult {
@@ -321,7 +327,7 @@ mod test {
             Ok(_) => panic!("starting another instance should have failed"),
 
             Err(err) => assert_eq!(err, StartError::OnlyOneInstanceAllowed),
-        };
+        }
     }
 
     #[test]
@@ -343,7 +349,7 @@ mod test {
                 );
             }
             Err(err) => panic!("unexpected error while starting Lassie on port 1: {err}"),
-        };
+        }
     }
 
     #[test]
