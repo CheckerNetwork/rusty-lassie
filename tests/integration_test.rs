@@ -17,7 +17,7 @@ fn start_daemon_and_request_cid() {
     assert!(port > 0, "Lassie is listening on non-zero port number");
 
     let url = format!(
-        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq"
+        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq?protocol=http&providers=/dns4/frisbii.fly.dev/https"
     );
     let response = ureq::get(&url)
         .set("Accept", "application/vnd.ipld.car")
@@ -58,10 +58,9 @@ fn configure_max_blocks() {
     let port = daemon.port();
     assert!(port > 0, "Lassie is listening on non-zero port number");
 
-    // XKCD Archives offered for exploration by IPFS Desktop
-    // This archive contains many blocks an takes long to download unless the block limit is applied
+    // This archive contains many blocks and takes long to download unless the block limit is applied
     let url = format!(
-        "http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy"
+        "http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy?protocol=http&providers=/dns4/frisbii.fly.dev/https"
     );
     let response = ureq::get(&url).call();
     let response = assert_ok_response(response);
@@ -87,10 +86,9 @@ fn configure_global_timeout() {
     let port = daemon.port();
     assert!(port > 0, "Lassie is listening on non-zero port number");
 
-    // XKCD Archives offered for exploration by IPFS Desktop
-    // This archive contains many blocks an takes long to download
+    // This archive contains many blocks and takes long to download unless the block limit is applied
     let url = format!(
-        "http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy"
+        "http://127.0.0.1:{port}/ipfs/bafybeih5zasorm4tlfga4ztwvm2dlnw6jxwwuvgnokyt3mjamfn3svvpyy?protocol=http&providers=/dns4/frisbii.fly.dev/https"
     );
     let response = ureq::get(&url).call();
     let response = assert_ok_response(response);
@@ -117,7 +115,7 @@ fn it_rejects_anonymous_requests_when_configured_with_access_token() {
     assert!(port > 0, "Lassie is listening on non-zero port number");
 
     let url = format!(
-        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq"
+        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq?protocol=http&providers=/dns4/frisbii.fly.dev/https"
     );
     let response = ureq::get(&url)
         .set("Accept", "application/vnd.ipld.car")
@@ -139,7 +137,7 @@ fn it_allows_authorized_requests_when_configured_with_access_token() {
     assert!(port > 0, "Lassie is listening on non-zero port number");
 
     let url = format!(
-        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq"
+        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq?protocol=http&providers=/dns4/frisbii.fly.dev/https"
     );
     let response = ureq::get(&url)
         .set("Accept", "application/vnd.ipld.car")
@@ -164,7 +162,7 @@ fn it_rejects_incorrect_authorization_when_configured_with_access_token() {
     assert!(port > 0, "Lassie is listening on non-zero port number");
 
     let url = format!(
-        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq"
+        "http://127.0.0.1:{port}/ipfs/bafkreih25dih6ug3xtj73vswccw423b56ilrwmnos4cbwhrceudopdp5sq?protocol=http&providers=/dns4/frisbii.fly.dev/https"
     );
     let response = ureq::get(&url)
         .set("Accept", "application/vnd.ipld.car")
