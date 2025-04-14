@@ -1,6 +1,6 @@
 [package]
 name = "lassie"
-version = "0.10.1"
+version = "0.10.2"
 description = "A Rust wrapper for Lassie - a minimal universal retrieval client library for IPFS and Filecoin"
 license = "MIT OR Apache-2.0"
 edition = "2021"
