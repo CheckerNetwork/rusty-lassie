@@ -27,4 +27,4 @@ pretty_assertions = "1.4.1"
 ureq = "2.9.7"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.2"
