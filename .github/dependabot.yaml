@@ -14,6 +14,10 @@ updates:
     ignore:
       # Keep the `log` crate version pinned to stay compatible with Deno crates
       - dependency-name: "log"
+      # Pin the `ureq` version. Newer versions break our test case that depends
+      # on a specific handling of transfer-encoding:chunked errors used by Lassie.
+      # It's a dev-dependency so there is very little risk in staying on an older version.
+      - dependency-name: "ureq"
 
   - package-ecosystem: "gomod"
     directory: "/"
