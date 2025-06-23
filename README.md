@@ -10,6 +10,9 @@ rusty-lassie
 
 Lassie repository: https://github.com/filecoin-project/lassie
 
+> [!CAUTION]
+> **This crate is no longer mantained.**
+
 ## Installation
 
 ```shell
